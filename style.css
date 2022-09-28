@@ -37,3 +37,18 @@ header {
 
 }
 
+#Photo-Gallery-of-Star-Cars-button {
+    font-size: 1.5rem;
+    color: black;
+    background: white;
+    padding: 5px;
+    border-radius: 12px;
+}
+
+#Vacation-and-Models {
+    display: none;
+    text-align: center;
+    margin: 0px;
+    background-color: white;
+}
+
