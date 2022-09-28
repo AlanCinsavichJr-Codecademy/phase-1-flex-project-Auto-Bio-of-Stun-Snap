@@ -101,3 +101,40 @@ header {
     padding-bottom: 10px;
 }
 
+.photo-post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    background: grey;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.photo-overlay {
+    display: flex;
+    position: absolute;
+    background: black;
+    opacity: 0;
+    z-index: 1;
+    width: 25px;
+    transition: opacity 2s;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.photo-overlay:hover {
+    opacity: .75;
+}
+
+.photo-overlay a {
+    color: aqua;
+    margin: 5px;
+}
+
+.photo-overlay p {
+    color: maroon;
+    margin: 5px;
+}
+
