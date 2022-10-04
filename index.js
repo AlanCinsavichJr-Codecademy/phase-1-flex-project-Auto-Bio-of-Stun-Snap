@@ -1,6 +1,8 @@
 let newIDNum = 0
 
 const ket = "26847882-ce742f707a7c77e680249c5b0"
+const button = document.querySelector('.btn')
+
 
 document.addEventListener("DOMContentLoaded",()=>{
     document.getElementById("Photo-Gallery-of-Star-Cars-button").addEventListener("onlcick",e=>{
@@ -22,6 +24,9 @@ getPixaHotModelsPhotos("");
 
 });
 
+button.addEventListener('click', () => {
+    button.classList.toggle('liked')
+})
 
 
 function getPixaStarCarsPhotos(topic) {
