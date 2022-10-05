@@ -11,7 +11,9 @@ document.addEventListener("DOMContentLoaded",()=>{
         getPixaStarCarsPhotos(e.target.topic.value);
     });
 
-
+    document.getElementById("Like-Button").addEventListener("click",()=>{
+        
+    })
 
     document.getElementById("Hot-Models-Photo-Gallery-button").addEventListener("onclick",e=>{
         e.preventDefault();
@@ -24,9 +26,7 @@ getPixaHotModelsPhotos("");
 
 });
 
-button.addEventListener('click', () => {
-    button.classList.toggle('liked')
-})
+
 
 
 function getPixaStarCarsPhotos(topic) {
@@ -34,8 +34,16 @@ function getPixaStarCarsPhotos(topic) {
     fetch(`https://pixabay.com/api/?key=${key}&q=${topic}&image_type=photo`).then(r=>r.json()).then(j=>j.hits.forEach(renderPhotoPost));
 }
 
+button.addEventListener('click', () => {
+    button.classList.toggle('liked')
+})
+
 function getPixaHotModelsPhotos(topic) {
     document.getElementById("Hot-Models-Cosplay-Gallery").style.display = "flex";
     fetch(`https://pixabay.com/api/?key=${key}&q=${topic}&image_type=photo`).then(r=>r.json()).then(j=>j.hits.forEach(renderPhotoPost));
 }
+
+button.addEventListener('click', () => {
+    button.classList.toggle('liked')
+})
 
