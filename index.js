@@ -25,21 +25,15 @@ document.addEventListener("DOMContentLoaded",()=>{
         getPixaHotModelsPhotos(e.target.topic.value)
     });
 
-getPixaStarCarsPhotos("");
-getPixaHotModelsPhotos("");
+function getPixaPhotos(topic){
+    fetch(`https://pixabay.com/api/?key=${key}&q=${topic}&image_type=photo`)
+    .then(r => r.json())
+    .then(j => j.hits.forEach(renderPhotoPost))
+}    
+
+getPixaPhotos();
 
 });
-
-//function getPixaPhotos(topic){
-    //fetch(`https://pixabay.com/api/?key=${key}&q=${topic}&image_type=photo`)
-    //.then(r => r.json())
-    //.then(j => j.hits.forEach(renderPhotoPost))
-//}
-
-function getPixaStarCarsPhotos(topic) {
-    document.getElementById("Star-Cars-Photo-Gallery").style.display = "flex";
-    fetch(`https://pixabay.com/api/?key=${key}&q=${topic}&image_type=photo`).then(r=>r.json()).then(j=>j.hits.forEach(renderPhotoPost));
-}
 
 function renderPhotoPostOne(photoData) {
 
@@ -63,11 +57,6 @@ function renderPhotoPostOne(photoData) {
 button.addEventListener('click', () => {
     button.classList.toggle('liked')
 })
-
-function getPixaHotModelsPhotos(topic) {
-    document.getElementById("Hot-Models-Cosplay-Gallery").style.display = "flex";
-    fetch(`https://pixabay.com/api/?key=${key}&q=${topic}&image_type=photo`).then(r=>r.json()).then(j=>j.hits.forEach(renderPhotoPost));
-}
 
 function renderPhotoPostTwo(photoData) {
 
