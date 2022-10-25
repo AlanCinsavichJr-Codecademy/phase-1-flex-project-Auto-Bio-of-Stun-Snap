@@ -63,8 +63,7 @@ button.addEventListener('click', () => {
 
 function renderPhotoPostTwo(photoData) {
 
-    let photoPost = document.createElement("div");
-    
+
 }
 
 button.addEventListener('click', () => {
