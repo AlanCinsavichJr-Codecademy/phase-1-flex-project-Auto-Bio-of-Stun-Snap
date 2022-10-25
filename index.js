@@ -52,6 +52,9 @@ function renderPhotoPostOne(photoData) {
     photoPost.append(photo);
     document.getElementById("Star-Cars-Photo-Gallery").append(photoPost,linkElement);
 
+    photoPost.append(photo);
+    document.getElementById("Hot-Models-Photo-Gallery").append(photoPost,linkElement);
+
 }
 
 button.addEventListener('click', () => {
