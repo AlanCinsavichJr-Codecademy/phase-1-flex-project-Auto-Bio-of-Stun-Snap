@@ -65,8 +65,6 @@ function renderPhotoPostTwo(photoData) {
 
     let photoPost = document.createElement("div");
     photoPost.id = `post${photoData.id}`;
-    photoPost.className = "photo-post";
-
 }
 
 button.addEventListener('click', () => {
