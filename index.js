@@ -70,7 +70,6 @@ function renderPhotoPostTwo(photoData) {
     let photo = document.createElement("img");
     photo.src = photoData.webformatURL;
 
-    let linkElement = document.createElement("a");
 }
 
 button.addEventListener('click', () => {
