@@ -74,10 +74,6 @@ function renderPhotoPostTwo(photoData) {
     linkElement.href = photoData.pageURL;
     linkElement.target = "_blank";
     linkElement.textContent = `Photo by ${photoData.user}`;
-
-    photoPost.append(photo);
-    document.getElementById("Star-Cars-Photo-Gallery").append(photoPost,linkElement);
-
 }
 
 button.addEventListener('click', () => {
