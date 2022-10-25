@@ -61,9 +61,6 @@ button.addEventListener('click', () => {
     button.classList.toggle('liked')
 })
 
-button.addEventListener('click', () => {
-    button.classList.toggle('liked')
-})
 
 $('#toggle').click(function() {
     if ($(this).is(":checked")) {
