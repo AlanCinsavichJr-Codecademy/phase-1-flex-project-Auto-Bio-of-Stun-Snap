@@ -61,8 +61,6 @@ button.addEventListener('click', () => {
     button.classList.toggle('liked')
 })
 
-function renderPhotoPostTwo(photoData)
-
 button.addEventListener('click', () => {
     button.classList.toggle('liked')
 })
