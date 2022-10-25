@@ -71,9 +71,6 @@ function renderPhotoPostTwo(photoData) {
     photo.src = photoData.webformatURL;
 
     let linkElement = document.createElement("a");
-    linkElement.href = photoData.pageURL;
-    linkElement.target = "_blank";
-    linkElement.textContent = `Photo by ${photoData.user}`;
 }
 
 button.addEventListener('click', () => {
