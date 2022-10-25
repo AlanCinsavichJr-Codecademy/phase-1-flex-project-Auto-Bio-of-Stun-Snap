@@ -67,9 +67,6 @@ function renderPhotoPostTwo(photoData) {
     photoPost.id = `post${photoData.id}`;
     photoPost.className = "photo-post";
 
-    let photo = document.createElement("img");
-    photo.src = photoData.webformatURL;
-
 }
 
 button.addEventListener('click', () => {
