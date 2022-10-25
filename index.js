@@ -64,7 +64,7 @@ button.addEventListener('click', () => {
 function renderPhotoPostTwo(photoData) {
 
     let photoPost = document.createElement("div");
-    photoPost.id = `post${photoData.id}`;
+    
 }
 
 button.addEventListener('click', () => {
