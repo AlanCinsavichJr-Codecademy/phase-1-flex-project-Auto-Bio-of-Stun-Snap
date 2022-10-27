@@ -4,7 +4,7 @@ This is my, Alan Cinsavich's, Flatiron Software Engineering Flex Program's Phase
 
 On the main body of the webpage I tell the story of how I started in photography from high school to the present.
 
-I was going to use a manually built json database but for the sake of smiplicity and expediency I decided to use the tried and true method that was already recommended by signing up for an API key from Pixabay. 
+I was going to use a manually built json database but for the sake of smiplicity and expediency I decided to use the tried and true method that was already recommended by signing up for an API key from Pixabay.
 
 # Deliverables
 

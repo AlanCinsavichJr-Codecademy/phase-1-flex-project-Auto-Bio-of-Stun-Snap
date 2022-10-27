@@ -1,41 +1,42 @@
 let newIDNum = 0
 
-const ket = "26847882-ce742f707a7c77e680249c5b0"
+const key = "26847882-ce742f707a7c77e680249c5b0"
 const button = document.querySelector('.btn')
 
 
 document.addEventListener("DOMContentLoaded",()=>{
-    document.getElementById("Photo-Gallery-of-Star-Cars-button").addEventListener("onlcick",e=>{
-        e.preventDefault();
-        document.getElementById("Photo-Gallery-of-Star-Cars").innerHTML ='';
-        getPixaStarCarsPhotos(e.target.topic.value);
-    });
+    document.getElementById("Photo-Gallery-of-Star-Cars");
+    
+    getPixaStarCarsPhotos(e.target.topic.value);
+    document.getElementById("Hot-Models-Photo-Gallery"); 
+     
+    getPixaHotModelsPhotos(e.target.topic.value);
+   });
+    //  Instead of event listener button concentrate on loading the gallery and being able to render gallery as part of the location argument as part of forEach in fetch
+ 
 
-    document.getElementById("Like-Button").addEventListener("click",()=>{
-        document.getElementById("Introduction").style.display = "none";
-        document.getElementById("Like-Button").style.display = "none";
-        document.getElementById("Vacations-and-Models").style.display = "none";
-        document.getElementById("Subscribe").style.display = "none";
-        document.getElementById("container").style.display = "block";
+    document.getElementById("Like-Button").addEventListener("click",e=>{
+        e.preventDefault();
+        // Add Like counter here
+
     })
-
-    document.getElementById("Hot-Models-Photo-Gallery-button").addEventListener("onclick",e=>{
-        e.preventDefault();
-        document.getElementById("Hot-Models-Photo-Gallery").innerHTML = '';
-        getPixaHotModelsPhotos(e.target.topic.value)
-    });
+ //     document.getElementById("Introduction").style.display = "none";
+    //     document.getElementById("Like-Button").style.display = "none";
+    //     document.getElementById("Vacations-and-Models").style.display = "none";
+    //     document.getElementById("Subscribe").style.display = "none";
+    //     document.getElementById("container").style.display = "block";
 
 function getPixaPhotos(topic){
     fetch(`https://pixabay.com/api/?key=${key}&q=${topic}&image_type=photo`)
     .then(r => r.json())
     .then(j => j.hits.forEach(renderPhotoPost))
+    //Need to add another argument or variable after renderPhotoPost as a location for each gallery
 }    
 
-getPixaPhotos();
+getPixaPhotos("Hot Rod Cars");
+//topic is invoked wthe getPixaPhotos above along with location
 
-});
-
-function renderPhotoPostOne(photoData) {
+function renderPhotoPost(photoData) {
 
     let photoPost = document.createElement("div");
     photoPost.id = `post${photoData.id}`;
