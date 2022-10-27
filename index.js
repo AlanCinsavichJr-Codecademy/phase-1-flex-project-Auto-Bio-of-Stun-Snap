@@ -2,14 +2,13 @@ let newIDNum = 0
 
 const key = "26847882-ce742f707a7c77e680249c5b0"
 const button = document.querySelector('.btn')
-
+const carGallery= document.getElementById("Photo-Gallery-of-Star-Cars");
+const modelGallery = document.getElementById("Hot-Models-Photo-Gallery"); 
 
 document.addEventListener("DOMContentLoaded",()=>{
-    document.getElementById("Photo-Gallery-of-Star-Cars");
-    
-    getPixaStarCarsPhotos(e.target.topic.value);
-    document.getElementById("Hot-Models-Photo-Gallery"); 
-     
+    carGallery
+    getcarGallerPhotos(e.target.topic.value);
+    modelGallery 
     getPixaHotModelsPhotos(e.target.topic.value);
    });
     //  Instead of event listener button concentrate on loading the gallery and being able to render gallery as part of the location argument as part of forEach in fetch
@@ -29,7 +28,8 @@ document.addEventListener("DOMContentLoaded",()=>{
 function getPixaPhotos(topic){
     fetch(`https://pixabay.com/api/?key=${key}&q=${topic}&image_type=photo`)
     .then(r => r.json())
-    .then(j => j.hits.forEach(renderPhotoPost))
+    .then(j => j.hits.forEach(renderPhotoPost, carGallery))
+    .then(j => j.hits.forEach(renderPhotoPost, modelGallery))
     //Need to add another argument or variable after renderPhotoPost as a location for each gallery
 }    
 
