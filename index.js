@@ -6,10 +6,8 @@ const carGallery= document.getElementById("Photo Gallery of Star Cars");
 const modelGallery = document.getElementById("Hot Models Photo Gallery"); 
 
 document.addEventListener("DOMContentLoaded",()=>{
-    carGallery
-    carGallery(e.target.topic.value);
-    modelGallery 
-    modelGallery(e.target.topic.value);
+    return carGallery, modelGallery;
+    
    });
     //  Instead of event listener button concentrate on loading the gallery and being able to render gallery as part of the location argument as part of forEach in fetch
  
