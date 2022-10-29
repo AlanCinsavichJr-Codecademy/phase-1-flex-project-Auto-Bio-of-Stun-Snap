@@ -2,14 +2,14 @@ let newIDNum = 0
 
 const key = "26847882-ce742f707a7c77e680249c5b0"
 const button = document.querySelector('.btn')
-const carGallery= document.getElementById("Photo-Gallery-of-Star-Cars");
-const modelGallery = document.getElementById("Hot-Models-Photo-Gallery"); 
+const carGallery= document.getElementById("Photo Gallery of Star Cars");
+const modelGallery = document.getElementById("Hot Models Photo Gallery"); 
 
 document.addEventListener("DOMContentLoaded",()=>{
     carGallery
-    getcarGallerPhotos(e.target.topic.value);
+    carGallery(e.target.topic.value);
     modelGallery 
-    getPixaHotModelsPhotos(e.target.topic.value);
+    modelGallery(e.target.topic.value);
    });
     //  Instead of event listener button concentrate on loading the gallery and being able to render gallery as part of the location argument as part of forEach in fetch
  
@@ -33,7 +33,7 @@ function getPixaPhotos(topic){
     //Need to add another argument or variable after renderPhotoPost as a location for each gallery
 }    
 
-getPixaPhotos("Hot Rod Cars");
+getPixaPhotos("Hot Rod Cars","Swimsuit Models", carGallery,modelGallery);
 //topic is invoked wthe getPixaPhotos above along with location
 
 function renderPhotoPost(photoData) {
@@ -63,7 +63,7 @@ button.addEventListener('click', () => {
 })
 
 
-$('#toggle').click(function() {
+('#toggle').click(function() {
     if ($(this).is(":checked")) {
       $(".sub").css("opacity", 0);
       $(".thanks").css("opacity", 1);
