@@ -1,6 +1,6 @@
 let newIDNum = 0
 
-const key = "26847882-ce742f707a7c77e680249c5b0"
+const key = "31025559-1d12f38f3606df5b59db8ee14"
 const button = document.querySelector('.btn')
 const carGallery= document.getElementById("Photo Gallery of Star Cars");
 const modelGallery = document.getElementById("Hot Models Photo Gallery"); 
@@ -9,29 +9,26 @@ document.addEventListener("DOMContentLoaded",()=>{
     return carGallery, modelGallery;
     
    });
-    //  Instead of event listener button concentrate on loading the gallery and being able to render gallery as part of the location argument as part of forEach in fetch
- 
-
-    document.getElementById("Like-Button").addEventListener("click",e=>{
-        e.preventDefault();
-        // Add Like counter here
-
-    })
- //     document.getElementById("Introduction").style.display = "none";
-    //     document.getElementById("Like-Button").style.display = "none";
-    //     document.getElementById("Vacations-and-Models").style.display = "none";
-    //     document.getElementById("Subscribe").style.display = "none";
-    //     document.getElementById("container").style.display = "block";
 
 function getPixaPhotos(topic){
     fetch(`https://pixabay.com/api/?key=${key}&q=${topic}&image_type=photo`)
     .then(r => r.json())
-    .then(j => j.hits.forEach(renderPhotoPost, carGallery))
-    .then(j => j.hits.forEach(renderPhotoPost, modelGallery))
+    .then(j => j.hits.forEach(renderPhotoPost,carGallery,modelGallery))
+    // .then(j => j.hits.forEach(renderPhotoPost, modelGallery))
     //Need to add another argument or variable after renderPhotoPost as a location for each gallery
 }    
 
-getPixaPhotos("Hot Rod Cars","Swimsuit Models", carGallery,modelGallery);
+
+    //  Instead of event listener button concentrate on loading the gallery and being able to render gallery as part of the location argument as part of forEach in fetch
+ 
+
+    // document.getElementById("Like-Button").addEventListener("click",e=>{
+    //     e.preventDefault();
+    //     // Add Like counter here
+
+    // })
+
+getPixaPhotos("Hot Rod Cars","Female Swimsuit Models", carGallery,modelGallery);
 //topic is invoked wthe getPixaPhotos above along with location
 
 function renderPhotoPost(photoData) {
@@ -49,10 +46,8 @@ function renderPhotoPost(photoData) {
     linkElement.textContent = `Photo by ${photoData.user}`;
 
     photoPost.append(photo);
-    document.getElementById("Star-Cars-Photo-Gallery").append(photoPost,linkElement);
-
-    photoPost.append(photo);
-    document.getElementById("Hot-Models-Photo-Gallery").append(photoPost,linkElement);
+    carGallery.append(photoPost,linkElement);
+    modelGallery.append(photoPost,linkElement);
 
 }
 
