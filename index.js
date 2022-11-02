@@ -7,20 +7,18 @@ const modelGallery = document.getElementById("Hot Models Photo Gallery");
 
 document.addEventListener("DOMContentLoaded",()=>{
     return carGallery, modelGallery;
-    
    });
 
-function getPixaPhotos(topic){
-    fetch(`https://pixabay.com/api/?key=${key}&q=${topic}&image_type=photo`)
+const topic1 = "https://pixabay.com/images/search/hot%20rod%20cars/?manual_search=1"
+const topic2 = "https://pixabay.com/images/search/female%20swimsuit%20models/?manual_search=1"
+
+
+function getPixaPhotos(topic1,topic2){
+    fetch(`https://pixabay.com/api/?key=${key}&q=${topic1,topic2}&image_type=photo`)
     .then(r => r.json())
     .then(j => j.hits.forEach(renderPhotoPost,carGallery,modelGallery))
     // .then(j => j.hits.forEach(renderPhotoPost, modelGallery))
-    //Need to add another argument or variable after renderPhotoPost as a location for each gallery
 }    
-
-
-    //  Instead of event listener button concentrate on loading the gallery and being able to render gallery as part of the location argument as part of forEach in fetch
- 
 
     // document.getElementById("Like-Button").addEventListener("click",e=>{
     //     e.preventDefault();
@@ -28,7 +26,7 @@ function getPixaPhotos(topic){
 
     // })
 
-getPixaPhotos("Hot Rod Cars","Female Swimsuit Models", carGallery,modelGallery);
+getPixaPhotos(carGallery,modelGallery);
 //topic is invoked wthe getPixaPhotos above along with location
 
 function renderPhotoPost(photoData) {
