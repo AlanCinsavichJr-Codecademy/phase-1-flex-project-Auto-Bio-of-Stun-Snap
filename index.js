@@ -1,17 +1,32 @@
 let newIDNum = 0
 
 const key = "31025559-1d12f38f3606df5b59db8ee14"
-const button = document.querySelector('.btn')
+const url1 = "https://pixabay.com/api/?key="
+const url2 = "&image_type=photo"
 const carGallery= document.getElementById("Photo Gallery of Star Cars");
 const modelGallery = document.getElementById("Hot Models Photo Gallery"); 
 const topic = ("Hot+Rod+Cars")
+const button = document.querySelector('.btn')
+debugger; 
 
 console.log("This part works")
 
-function getPixaPhotos(carGallery){
-    fetch(`https://pixabay.com/api/?${key}&q=${topic}&image_type=photo`)
-    .then(r => r.json())
-    .then(carGallery.forEach(renderPhotoPost(topic)))
+//console.log(`https://pixabay.com/api/?key=${key}&q=${topic}&image_type=photo`)
+
+function getPixaPhotos(){
+    fetch(`${url1}${key}&q=${topic}${url2}`)
+    .then(response =>  {
+        // let response1 = response;
+        // console.log(response)
+        // comsole/log(response1)
+      
+        // start add new createElents here to append to carGallery and modelGallery
+
+        })
+  
+    //.then() 
+      
+        //renderPhotoPost()
     
 
 getPixaPhotos(carGallery);
