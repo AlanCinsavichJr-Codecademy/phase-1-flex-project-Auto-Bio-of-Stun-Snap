@@ -11,30 +11,25 @@ debugger;
 
 console.log("This part works")
 
-//console.log(`https://pixabay.com/api/?key=${key}&q=${topic}&image_type=photo`)
-
-function getPixaPhotos(){
     fetch(`${url1}${key}&q=${topic}${url2}`)
     .then(response =>  {
-        // let response1 = response;
-        // console.log(response)
-        // comsole/log(response1)
-      
-        // start add new createElents here to append to carGallery and modelGallery
-
+        let response1 = response;
+        console.log(response)
+        let response1jsonPromise = response1.json().then(rJson => {
+            console.log({rJson})
+            rJson.hits.map((item) => {
+                let newImg = document.createElement('img');
+                newImg.src = item.previewURL;
+                carGallery.append(newImg);
+                console.log(response1jsonPromise)
+            })
         })
+      })
   
-    //.then() 
-      
-        //renderPhotoPost()
-    
-
-getPixaPhotos(carGallery);
-//topic is invoked wthe getPixaPhotos above along with location
 
 console.log("WHY WHY")
     
-} 
+ 
 
 document.addEventListener("DOMContentLoaded",()=>{
     // return carGallery, modelGallery;
