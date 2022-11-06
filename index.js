@@ -5,13 +5,16 @@ const url1 = "https://pixabay.com/api/?key="
 const url2 = "&image_type=photo"
 const carGallery= document.getElementById("Photo Gallery of Star Cars");
 const modelGallery = document.getElementById("Hot Models Photo Gallery"); 
-const topic = ("Hot+Rod+Cars")
+const topic1 = ("Hot+Rod+Cars")
+const topic2 = ("Female-Swimsuit-Models")
 const button = document.querySelector('.btn')
 debugger; 
 
+document.addEventListener("DOMContentLoaded",()=>{
+
 console.log("This part works")
 
-    fetch(`${url1}${key}&q=${topic}${url2}`)
+    fetch(`${url1}${key}&q=${topic1}${url2}`)
     .then(response =>  {
         let response1 = response;
         console.log(response)
@@ -25,21 +28,32 @@ console.log("This part works")
             })
         })
       })
+
+    fetch(`${url1}${key}&q=${topic2}${url2}`)
+    .then(response =>  {
+        let response1 = response;
+        console.log(response)
+        let response1jsonPromise = response1.json().then(rJson => {
+            console.log({rJson})
+            rJson.hits.map((item) => {
+                let newImg = document.createElement('img');
+                newImg.src = item.previewURL;
+                modelGallery.append(newImg);
+                console.log(response1jsonPromise)
   
 
 console.log("WHY WHY")
     
- 
-
-document.addEventListener("DOMContentLoaded",()=>{
-    // return carGallery, modelGallery;
-   });
-
-    // document.getElementById("Like-Button").addEventListener("click",e=>{
+  // document.getElementById("Like-Button").addEventListener("click",e=>{
     //     e.preventDefault();
     //     // Add Like counter here
 
     // })
+
+
+   });
+
+   
 
 function renderPhotoPost(photoData) {
 
