@@ -8,11 +8,10 @@ const modelGallery = document.getElementById("Hot Models Photo Gallery");
 const topic1 = ("Hot+Rod+Cars")
 const topic2 = ("Female-Swimsuit-Models")
 const button = document.querySelector('.btn')
-debugger; 
-
-document.addEventListener("DOMContentLoaded",()=>{
 
 console.log("This part works")
+
+document.addEventListener("DOMContentLoaded",()=>{
 
     fetch(`${url1}${key}&q=${topic1}${url2}`)
     .then(response =>  {
@@ -40,28 +39,16 @@ console.log("This part works")
                 newImg.src = item.previewURL;
                 modelGallery.append(newImg);
                 console.log(response1jsonPromise)
-  
-
-console.log("WHY WHY")
-    
-  // document.getElementById("Like-Button").addEventListener("click",e=>{
-    //     e.preventDefault();
-    //     // Add Like counter here
-
-    // })
-
-
-             });
             }
-    )});
-});        
+        )});
+    });
 
-   
+console.log("WHY WHY")  
 
 function renderPhotoPost(photoData) {
 
     let photoPost = document.createElement("div");
-    photoPost.id = `post${photoData.id}`;
+    photoPost.id = `post${photoData}`;
     photoPost.className = "photo-post";
 
     let photo = document.createElement("img");
@@ -72,11 +59,25 @@ function renderPhotoPost(photoData) {
     linkElement.target = "_blank";
     linkElement.textContent = `Photo by ${photoData.user}`;
 
+    const likesCounter = document.querySelector('.likes')
+    likesCounter.innertext = `${data.likes} likes`
+
+    const likeButton = document.querySelector('.like-button')
+    
+    likeButton.addEventListener('click', () => {
+        likesCounter.innertext = incrementLikes(photoData)
+    })
+
     photoPost.append(photo);
-    carGallery.append(photoPost,linkElement);
-    modelGallery.append(photoPost,linkElement);
+    carGallery.append(photoPost,linkElement,likeButton,likesCounter);
+    modelGallery.append(photoPost,linkElement,likeButton,likesCounter);
 
 }
+
+renderPhotoPost();
+
+});        
+
 
 button.addEventListener('click', () => {
     button.classList.toggle('liked')
