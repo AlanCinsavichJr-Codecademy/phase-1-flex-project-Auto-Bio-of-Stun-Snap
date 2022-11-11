@@ -9,7 +9,7 @@ const topic1 = ("Hot+Rod+Cars")
 const topic2 = ("Female-Swimsuit-Models")
 const button = document.querySelector('.btn')
 
-console.log("This part works")
+console.log("Test 1")
 
 document.addEventListener("DOMContentLoaded",()=>{
 
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         )});
     });
 
-console.log("WHY WHY")  
+console.log("Test 2")  
 
 function renderPhotoPost(photoData) {
 
@@ -59,13 +59,19 @@ function renderPhotoPost(photoData) {
     linkElement.target = "_blank";
     linkElement.textContent = `Photo by ${photoData.user}`;
 
-    const likesCounter = document.querySelector('.likes')
-    likesCounter.innertext = `${data.likes} likes`
+    console.log("Test 3")
+
+    //const likes = count
 
     const likeButton = document.querySelector('.like-button')
     
+    let count = 0
+
     likeButton.addEventListener('click', () => {
-        likesCounter.innertext = incrementLikes(photoData)
+        const likesCounter = document.querySelector('.likes')
+        likesCounter.innertext = incrementLikes(`${likes} likes`)
+        count = ++
+        console.log("Test 4")
     })
 
     photoPost.append(photo);
@@ -73,6 +79,8 @@ function renderPhotoPost(photoData) {
     modelGallery.append(photoPost,linkElement,likeButton,likesCounter);
 
 }
+
+console.log("Test 5")
 
 renderPhotoPost(carGallery,modelGallery);
 
