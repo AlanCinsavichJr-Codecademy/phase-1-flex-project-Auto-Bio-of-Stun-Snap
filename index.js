@@ -74,14 +74,14 @@ function renderPhotoPost(photoData) {
 
 }
 
-renderPhotoPost();
+renderPhotoPost(carGallery,modelGallery);
 
 });        
 
 
-button.addEventListener('click', () => {
-    button.classList.toggle('liked')
-})
+// button.addEventListener('click', () => {
+//     button.classList.toggle('liked')
+// })
 
 
 ('#toggle').click(function() {
