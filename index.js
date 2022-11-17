@@ -61,19 +61,22 @@ function renderPhotoPost(photoData) {
 
     console.log("Test 3")
 
-    //const likes = count
+    const likesCounter = document.querySelector('.likes')
+        likesCounter.innertext = `${photoData.likes} likes`
 
     const likeButton = document.querySelector('.like-button')
     
     let count = 0
 
-    likeButton.addEventListener('click', () => {
-        const likesCounter = document.querySelector('.likes')
-        likesCounter.innertext = incrementLikes(`${likes} likes`)
-        count = ++
-        console.log("Test 4")
-    })
+    function incrementlikes(){}
 
+    likeButton.addEventListener('click', () => {
+        likesCounter.innertext = incrementlikes(photoData)        
+        count++
+        console.log("Test 4")
+       
+    })
+    
     photoPost.append(photo);
     carGallery.append(photoPost,linkElement,likeButton,likesCounter);
     modelGallery.append(photoPost,linkElement,likeButton,likesCounter);
