@@ -61,6 +61,27 @@ function renderPhotoPost(photoData) {
 
     console.log("Test 3")
 
+    //Based off of Toy Tale Lab?
+
+    const galleryLikes = document.createElement('p')
+        galleryLikes.innertext = `${gallery.Likes} Likes`
+        
+    const likeBtn = document.createElement('button')
+        likeBtn.innertext = `Like <2`
+        likeBtn.className = `like-btn`
+        likeBtn.id = gallery.id
+    
+    likeBtn.addEventListener('click', (e) => {
+        const currentLikeText = e.target.previousSibling.innertext
+        const actualLikes = cuurentLikeText.split(" ")[0]
+        e.target.previousSibling.innertext = `${parseInt(actualLikes) +1 } Likes`
+    })
+    
+    carGallery.append(galleryLikes,likeBtn)
+
+    //My Original Like Button Code?
+    
+    
     const likesCounter = document.querySelector('.likes')
         likesCounter.innertext = `${photoData.likes} likes`
 
