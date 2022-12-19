@@ -72,6 +72,7 @@ function renderPhotoPost(photoData) {
         likeBtn.id = gallery.id
     
     likeBtn.addEventListener('click', (e) => {
+        console.log("Is this working?")
         const currentLikeText = e.target.previousSibling.innertext
         const actualLikes = cuurentLikeText.split(" ")[0]
         e.target.previousSibling.innertext = `${parseInt(actualLikes) +1 } Likes`
@@ -92,6 +93,7 @@ function renderPhotoPost(photoData) {
     function incrementlikes(){}
 
     likeButton.addEventListener('click', () => {
+        console.log("IS this part working?")
         likesCounter.innertext = incrementlikes(photoData)        
         count++
         console.log("Test 4")
@@ -116,16 +118,16 @@ renderPhotoPost(carGallery,modelGallery);
 // })
 
 
-('#toggle').click(function() {
-    if ($(this).is(":checked")) {
-      $(".sub").css("opacity", 0);
-      $(".thanks").css("opacity", 1);
-    } 
-    else if ($(this).is(":not(:checked)")) {
-       $(".sub").css("opacity", 1);
-       $(".thanks").css("opacity", 0);
-    }
-  });
+// ('#toggle').click(function() {
+//     if ($(this).is(":checked")) {
+//       $(".sub").css("opacity", 0);
+//       $(".thanks").css("opacity", 1);
+//     } 
+//     else if ($(this).is(":not(:checked)")) {
+//        $(".sub").css("opacity", 1);
+//        $(".thanks").css("opacity", 0);
+//     }
+//   });
 
 function createPhotoObj(e) {
     newIDNum++;
