@@ -74,7 +74,7 @@ function renderPhotoPost(photoData) {
     likeBtn.addEventListener('click', (e) => {
         console.log("Is this working?")
         const currentLikeText = e.target.previousSibling.innertext
-        const actualLikes = cuurentLikeText.split(" ")[0]
+        const actualLikes = currentLikeText.split(" ")[0]
         e.target.previousSibling.innertext = `${parseInt(actualLikes) +1 } Likes`
     })
     
@@ -129,15 +129,15 @@ renderPhotoPost(carGallery,modelGallery);
 //     }
 //   });
 
-function createPhotoObj(e) {
-    newIDNum++;
-    let photo = {
-        id: newIDNum,
-        webformatURL: e.target.webformatURL.value,
-        webformatWidth: e.target.webformatWidth.value,
-        webformatHeight: e.target.webformatHeight.value,
-        user: e.target.user.value,
-        likes: 0
-    };
-    return photo;
+// function createPhotoObj(e) {
+//     newIDNum++;
+//     let photo = {
+//         id: newIDNum,
+//         webformatURL: e.target.webformatURL.value,
+//         webformatWidth: e.target.webformatWidth.value,
+//         webformatHeight: e.target.webformatHeight.value,
+//         user: e.target.user.value,
+//         likes: 0
+//     };
+//     return photo;
 }
