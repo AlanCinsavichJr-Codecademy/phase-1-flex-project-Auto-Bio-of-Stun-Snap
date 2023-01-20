@@ -11,7 +11,7 @@ const button = document.querySelector('.btn')
 
 console.log("Test 1")
 
-document.addEventListener("DOMContentLoaded",()=>{
+// document.addEventListener("DOMContentLoaded",()=>{
 
     fetch(`${url1}${key}&q=${topic1}${url2}`)
     .then(response =>  {
@@ -28,20 +28,33 @@ document.addEventListener("DOMContentLoaded",()=>{
         })
       })
 
+    console.log(`${url1}${key}&q=${topic1}${url2}`)
+
+    // fetch(`${url1}${key}&q=${topic2}${url2}`)
+    // .then(response =>  {
+    //     let response1 = response;
+    //     console.log(response)
+    //     let response1jsonPromise = response1.json().then(rJson => {
+    //         console.log({rJson})
+    //         rJson.hits.map((item) => {
+    //             let newImg = document.createElement('img');
+    //             newImg.src = item.previewURL;
+    //             modelGallery.append(newImg);
+    //             console.log(response1jsonPromise)
+    //         }
+    //     )});
+    // });
+
     fetch(`${url1}${key}&q=${topic2}${url2}`)
-    .then(response =>  {
-        let response1 = response;
-        console.log(response)
-        let response1jsonPromise = response1.json().then(rJson => {
-            console.log({rJson})
-            rJson.hits.map((item) => {
-                let newImg = document.createElement('img');
-                newImg.src = item.previewURL;
-                modelGallery.append(newImg);
-                console.log(response1jsonPromise)
-            }
-        )});
-    });
+    .then(response => response.json())
+    .then(data => {
+        data.hits.map((item) => {
+            let newImg = document.createElement('img');
+            newImg.src = item.previewURL;
+            modelGallery.append(newImg);
+        }
+    )});
+​
 
 console.log("Test 2")  
 
@@ -64,18 +77,18 @@ function renderPhotoPost(photoData) {
     //Based off of Toy Tale Lab?
 
     const galleryLikes = document.createElement('p')
-        galleryLikes.innertext = `${gallery.Likes} Likes`
+        galleryLikes.innerText = `${gallery.Likes} Likes`
         
     const likeBtn = document.createElement('button')
-        likeBtn.innertext = `Like <2`
+        likeBtn.innerText = `Like <2`
         likeBtn.className = `like-btn`
         likeBtn.id = gallery.id
     
     likeBtn.addEventListener('click', (e) => {
         console.log("Is this working?")
-        const currentLikeText = e.target.previousSibling.innertext
+        const currentLikeText = e.target.previousSibling.innerText
         const actualLikes = currentLikeText.split(" ")[0]
-        e.target.previousSibling.innertext = `${parseInt(actualLikes) +1 } Likes`
+        e.target.previousSibling.innerText = `${parseInt(actualLikes) +1 } Likes`
     })
     
     carGallery.append(galleryLikes,likeBtn)
@@ -84,7 +97,7 @@ function renderPhotoPost(photoData) {
     
     
     const likesCounter = document.querySelector('.likes')
-        likesCounter.innertext = `${photoData.likes} likes`
+        likesCounter.innerText = `${photoData.likes} likes`
 
     const likeButton = document.querySelector('.like-button')
     
@@ -94,7 +107,7 @@ function renderPhotoPost(photoData) {
 
     likeButton.addEventListener('click', () => {
         console.log("IS this part working?")
-        likesCounter.innertext = incrementlikes(photoData)        
+        likesCounter.innerText = incrementlikes(photoData)        
         count++
         console.log("Test 4")
        
